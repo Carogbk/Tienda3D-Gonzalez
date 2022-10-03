@@ -1,0 +1,43 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    background-color: #161a1d;
+    color: #7400b8;
+    
+}
+
+.logo{
+    width: 8%;
+    height: 80px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+a{
+    margin: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    background-color: white;
+    color: #161a1d;
+}
+a:hover{
+    background-color: #7400b8;
+}
+
+.botonInicio{
+    margin: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    background-color: white;
+    color: #161a1d; 
+}
+
+.botonInicio:hover{
+    background-color: #7400b8;
+}
