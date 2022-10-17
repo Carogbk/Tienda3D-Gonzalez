@@ -1,0 +1,16 @@
+    .cajaContador{
+        width: 25%;
+        margin: 5px;
+    }
+
+    .botonesContador{
+    margin: 5px;
+    border-radius: 5px;
+    color: #161a1d;
+    }
+
+    .contadorNumeros{
+        margin: 5px;
+        border-radius: 5px;
+        color: #161a1d;
+    }
