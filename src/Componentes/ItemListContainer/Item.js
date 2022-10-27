@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 const Item = ({ productos }) => {
-    console.log(productos)
+    
   return (
     <Card sx={{ maxWidth: 345 }} style={styles.container}>
       <CardActionArea>
