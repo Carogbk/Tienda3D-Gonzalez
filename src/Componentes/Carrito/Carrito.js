@@ -48,14 +48,13 @@ export const Carrito = () => {
         {
         cart.length === 0 ? 
         (
-            <h2>No agregaste productos aun, no te preocupes podes hacer clic ) <Link to="/">AQUI</Link></h2>
+            <h3> No agregaste productos aun, no te preocupes podes hacer clic <Link to="/">Aca</Link></h3>
         ):(
-        <>
+        <>  <div>
+            <h1 className="tituloCarrito">Gracias por tu compra, solo quedan unos pasos...</h1>
+            </div>
                     {cart.map((producto) => {
                         return (<>
-                    <div>
-                        <h1 className="tituloCarrito">Gracias, por tu compra. Solo queda algunos pasos...</h1>
-                    </div>
                     <div className="textoCarrito">
                         <div key={producto.id}>
                         <p>Agregaste al carrito...</p>
@@ -74,7 +73,7 @@ export const Carrito = () => {
                 <div>
                 <h2 className="subtitulosCarrito">Productos: {quantity}</h2>
                 <h3>Total del carrito: $ {total}</h3> 
-                    <button onClick={finalizarCompra}> Finzalizar Compra</button>
+                    <button className="subtitulosCarrito" onClick={finalizarCompra}> Finzalizar Compra</button>
                 </div>
                 </>
             )}

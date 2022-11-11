@@ -12,7 +12,9 @@
 .tituloCarrito{
     text-align: center;
     text-shadow: 0 0 5px blueviolet;
+    margin-bottom: 2%;
 }
 .subtitulosCarrito{
-
+text-align: center;
+justify-content: center;
 }
