@@ -2,39 +2,44 @@ import React, {useState, useEffect } from "react";
 import {ItemCount} from '../Contador/ItemCount'
 import ItemList from './ItemList';
 import {useParams} from "react-router-dom"
+import { db } from "../../firebase/firebase";
+import {getDocs, collection, query, where} from "firebase/firestore"
 
 export const ItemListContainer = ({greeting}) => {  
 
   const [catalogo, setCatalogo] = useState([])
   const [cargando, setCargando] = useState (true)
-  const algo = useParams();
-  console.log(algo)
-  const {id} = useParams ();
-  const URL_GRAL='https://fakestoreapi.com/products'
-  const URL_CAT=`${URL_GRAL}/category/${id}`
+  const {id} = useParams();
+  const productosCollection= collection(db, 'productos');
+  const qy= query (productosCollection, where('category', '==', `${id}`))
+ 
   let url = "";
   if(!id){
-    url = URL_GRAL;
+    url = productosCollection;
   }else{
-    url = URL_CAT;
+    url = qy;
   }
 
-  console.log(url)
 
-useEffect(()=>{
-  const getCatalogo = async () =>{
-    try {
-      const res = await fetch (url);
-      const data= await res.json();
-      setCatalogo(data);
-    } catch {
-      console.log("error");
-    }finally{
-      setCargando(false)
-    }
-  };
-  getCatalogo();
-  },[id]);
+  useEffect(()=>{
+  getDocs(url).then((result)=>{
+    
+    const listProductos = result.docs.map(item =>{
+      
+    return{
+      ...item.data(),
+      id: item.id,
+    } 
+  });
+  
+  setCatalogo(listProductos);
+})
+.catch ((errror)=> { 
+    })
+.finally(setCargando(false));
+},[id]);
+
+  
   
   return (
     <>
@@ -51,12 +56,18 @@ useEffect(()=>{
 
 
 
-//   fetch("https://fakestoreapi.com/products")
-//   .then((res)=>res.json())
-//   .then((json) => setCatalogo(json))
-//   .catch((error)=>{
-//     console.log(error);
-//   })
-//   .finally(setCargando(false))
+ 
+
   
-// },[]),
+  // const URL_GRAL='https://fakestoreapi.com/products'
+  // const URL_CAT=`${URL_GRAL}/category/${id}`
+
+
+
+
+  // const getCatalogo = async () =>{
+  //   try {
+  //     const res = await fetch (url);
+  //     const data= await res.json();
+  //     setCatalogo(data);
+  //   } 

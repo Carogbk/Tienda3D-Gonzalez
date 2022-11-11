@@ -1,0 +1,18 @@
+.botonesCarrito{
+    display: "flex",
+    
+}
+
+.textoCarrito{
+    background-color: blueviolet;
+    width: 25%;
+    text-align: center;
+}
+
+.tituloCarrito{
+    text-align: center;
+    text-shadow: 0 0 5px blueviolet;
+}
+.subtitulosCarrito{
+
+}

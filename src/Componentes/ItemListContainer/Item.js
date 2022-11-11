@@ -8,9 +8,9 @@ import {
   CardActionArea,
   CardActions,
 } from "@mui/material";
+import {Link} from "react-router-dom"
 
 const Item = ({ productos }) => {
-    
   return (
     <Card sx={{ maxWidth: 345 }} style={styles.container}>
       <CardActionArea>
@@ -35,9 +35,11 @@ const Item = ({ productos }) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="secondary">
+        <Link to={'/item/' + productos.id}>
+        <Button size="small" color="secondary" >
           Ver producto detallado
         </Button>
+        </Link>
       </CardActions>
     </Card>
   );

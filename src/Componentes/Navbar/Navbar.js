@@ -2,7 +2,7 @@ import React from "react";
 import './Navbar.css';
 import { CartWidget } from "../CartWidget/CartWidget";
 import logo from '../../imagenes/logo.jpg'
-import {Link, NavLink} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
 const Navbar = ({nombreUsuario,children})=> {
@@ -13,7 +13,6 @@ const Navbar = ({nombreUsuario,children})=> {
         {nombre:"jewelery", id:3, ruta:"/categoria/jewelery"},
         {nombre:"men's clothing", id:4, ruta:"/categoria/men's clothing"},
         {nombre:"women's clothing", id:5, ruta:"/categoria/women's clothing"},
-        {nombre:"Detalle", id:5, ruta:"/item/5"},
     ];
     return(
         <header>
@@ -23,6 +22,7 @@ const Navbar = ({nombreUsuario,children})=> {
             <h2 styles= {styles.tituloNav}>"Gprinter donde tus ideas se convierten en 3D"</h2>
         
             <nav>
+                    
             {
                 categorias.map((categorias)=>{
                     

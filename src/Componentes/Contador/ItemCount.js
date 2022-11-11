@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './ItemCount.css';
+import {Link} from "react-router-dom"
 
 export const ItemCount = ({stock, initial, onAdd}) => {
     const [count,setCount] = useState(initial);
@@ -37,8 +38,8 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         {stock === 0 ? "Sin stock" : "Agregar al carrito"}
         </span>
     </button>
-    <button disabled={stock === 0} onClick={manejoClickLim}>Limpiar Carrito</button>
-    </div>
+    <button disabled={stock === 0} onClick={manejoClickLim}><Link to="/">Seguir Buscando </Link></button>
+    </div>  
     </div>
     
     
