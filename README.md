@@ -15,3 +15,6 @@ Detalle de cada producto
 Carrito con detalle
 Alerta de compra con id de la orden.
 Base de datos de productos y ventas realizadas
+
+
+Dejo mi link de deploy https://tienda3-d-gonzalez.vercel.app/
