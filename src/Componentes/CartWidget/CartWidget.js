@@ -8,8 +8,8 @@ export const CartWidget = () => {
   return (
     <>
     <div>
-    {quantity === 0 ? '': <p className="qty">{quantity}</p> }
-    <button><ShoppingCartIcon color="succesary" fontSize="large" /></button> 
+    {quantity === 0 ? '': <h6 className="quantity">{quantity}</h6> }
+    <button ><ShoppingCartIcon color="succesary" fontSize="large" /></button> 
     </div>
     </>
   );

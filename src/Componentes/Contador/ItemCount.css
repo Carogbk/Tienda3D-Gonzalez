@@ -3,12 +3,33 @@
         margin: 5px;
     }
 
-    .botonesContador{
-    margin: 5px;
-    border-radius: 5px;
-    color: #161a1d;
+    .botonesGeneral{
+        display: inline;
+        padding: .4rem 1rem;
+        border: 1px solid #995309;
+        border-radius: 2px;
+        background-color: #d9750b;
+        color:#161a1d;
+        font-size: 1rem;
+        text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+        box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
+          0 1px 3px rgba(0,0,0,.2);
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#A69DB9),to(#A69DB9));
+        background-image: linear-gradient(#A69DB9 10%,#A69DB9 100%);
     }
 
+    .botonesContador:hover, .botonesContador:focus {
+        background-color: #A69DB9;
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#A69DB9),to(#A69DB9));
+        background-image: linear-gradient(#A69DB9 10%,#A69DB9 100%);
+      }
+      
+      .botonesContador:active {
+        background-color: #A69DB9;
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#A69DB9),to(#A69DB9));
+        background-image: linear-gradient(#A69DB9 10%,#A69DB9 100%);
+      }
     .contadorNumeros{
         margin: 5px;
         border-radius: 5px;

@@ -1,12 +1,58 @@
-.botonesCarrito{
-    display: "flex",
+*{box-sizing:border-box;}
+
+.carritoStyle{
+ width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5% 0;
+  margin-bottom: 5em;
+  
+}
+.addCart{
+    font-size: var(--md);
+    font-weight: bold;
+}
+
+.botonEliminarCart{
+    background-color: #EA563B;
+      border-radius: 8px #EA563B;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      font-size: var(--md);
+      font-weight: bold;
+      height: 50px;
     
 }
 
-.textoCarrito{
-    background-color: blueviolet;
-    width: 25%;
+.shoppingCart{
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
     text-align: center;
+    margin-bottom: 24px;
+      align-items: center;
+  border-width: 2px #A69DB9;
+  border-style: outset;
+}
+
+.cartDatos{
+    margin: 0;
+    color: #A69DB9;
+    font-size: var(--md);
+      font-weight: bold;
+}
+
+.textoCarrito{
+    display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+      background-color: var(--text-input-field);
+      margin-bottom: 24px;
+      border-radius: 8px;
+      padding: 0 24px;
+
 }
 
 .tituloCarrito{
@@ -15,6 +61,26 @@
     margin-bottom: 2%;
 }
 .subtitulosCarrito{
-text-align: center;
-justify-content: center;
+
+color: #8139C9;
+}
+
+.formulario{
+    margin-top: 20px;
+    width:300px;
+	padding:16px;
+	border-radius:10px;
+	margin:auto;
+	background-color: #8139C9;
+}
+
+.botonesForm{
+    width:50%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #8139C9;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#A69DB9;
 }

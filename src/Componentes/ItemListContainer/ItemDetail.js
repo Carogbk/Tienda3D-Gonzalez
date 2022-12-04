@@ -8,12 +8,13 @@ import { ItemCount } from '../Contador/ItemCount';
 import {Link, NavLink} from "react-router-dom"
 import { CartContext } from '../Context/CartContext';
 import { Carrito } from '../Carrito/Carrito';
-const Detail = ({ productos }) => {
+
+
+const ItemDetail = ({ productos }) => {
   const  [agregarItemCount, setAgregarItemCount]= useState (false);
   const {agregarItem} = useContext(CartContext)
   
   const onAdd=(count)=>{
-    console.log(count);
     setAgregarItemCount(true);
     agregarItem(productos, count)
   }
@@ -38,11 +39,12 @@ const Detail = ({ productos }) => {
               </Typography>
             </CardContent>
           </CardActionArea>
+
           {!agregarItemCount ? (
-          <ItemCount initial={0} stock={10} onAdd={onAdd}/>
-        ): (
+          <ItemCount initial={1} stock={productos.stock} onAdd={onAdd}/>)
+          : (
           <Link to={'/carrito'}>
-            <button>Ok, agregarlo al carrito!</button>
+            <button className='botonesGeneral'>Finalizar Compra</button>
           </Link>
         )}
         </Card>
@@ -50,4 +52,4 @@ const Detail = ({ productos }) => {
       );
   };
 
-  export default Detail;
+  export default ItemDetail;

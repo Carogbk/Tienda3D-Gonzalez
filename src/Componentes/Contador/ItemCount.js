@@ -12,7 +12,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
     };
 
     const manejoClickRes = () =>{
-        if(count > 1){
+        if(count> 1){
             setCount(count - 1)
         }
     };
@@ -21,24 +21,23 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         setCount(0);
     };
 
+    const manejoClickAddCarrito = ()=>{
+        if(stock!==0){
+            onAdd(count);
+        }
+    }
+
     
     return (
-        <div className='cajaContador'>
-        <h1>Contador</h1>
-        <div className='botonesContador'>
-        <div>
+        < div className='cajaContador'>
+        <div className='botonesGeneral'>
         <button onClick={manejoClickRes}>-</button>
         {<h3 className='contadorNumeros'>{count}</h3>}
         <button  onClick={manejoClickSum}>+</button>
-</div>
-    </div>
+        </div>
     <div>
-    <button disabled={stock === 0} onClick={()=>onAdd(count)}>
-        <span>
-        {stock === 0 ? "Sin stock" : "Agregar al carrito"}
-        </span>
+    <button className='botonesGeneral' disabled={stock===0} onClick={manejoClickAddCarrito}>{stock === 0 ? <span>Sin stock</span>  : <span>Agregar al Carrito</span>}
     </button>
-    <button disabled={stock === 0} onClick={manejoClickLim}><Link to="/">Seguir Buscando </Link></button>
     </div>  
     </div>
     
